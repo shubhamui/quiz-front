@@ -12,6 +12,10 @@ export const Wrapper = styled.section`
             box-shadow : 2px 2px 5px #ccc;
             padding : 30px;
             box-sizing : border-box;
+            display : flex;
+            flex-direction : column;
+            justify-content : center;
+            align-items : center;
             img{
                 height : 300px;
             }

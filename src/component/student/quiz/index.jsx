@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Wrapper } from './style'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { services } from '../../../services'
 
 export const Quiz = () => {
@@ -12,6 +12,9 @@ export const Quiz = () => {
     const [selected, setSelected] = useState(0)
     const [answers, setAnswers] = useState({})
     const [params] = useSearchParams()
+
+    const navigate = useNavigate()
+
     const id = params.get('id')
     useEffect(() => {
         services.getQuestions(id)
@@ -37,6 +40,9 @@ export const Quiz = () => {
             debugger
         })
         .catch(console.log)
+        .finally(_ => {
+            navigate('/profile')
+        })
     }
 
   return (

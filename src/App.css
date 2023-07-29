@@ -11,3 +11,9 @@ ul{
 body{
   font-size : 16px;
 }
+
+.inner{
+  min-width: 400px;
+  width : 80%;
+  margin : auto;
+}

@@ -18,10 +18,11 @@ export const Login = ({setLoggedInUser}) => {
         })
         .then(({data}) => {
             setLoggedInUser({
-                contact,
+                name : data.name,
+                contact : data.contact,
                 authenticationToken : data.authenticationToken
             })
-            navigate('/student')
+            navigate('/')
         })
         .catch(err => {
             debugger
